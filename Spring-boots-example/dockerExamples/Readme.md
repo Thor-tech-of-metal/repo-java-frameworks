@@ -15,8 +15,7 @@ Build a docker image
 ====================
 [skynet@localhost dockerExamples]$ sudo ./mvnw install dockerfile:build
 
-
-push docker image
+Push docker image
 =================
 [skynet@localhost dockerExamples]$ sudo ./mvnw dockerfile:push
 
@@ -31,4 +30,8 @@ Build and deploy manually
 Notes : run and map internal port from 8080 to 8080
 
 *) [skynet@localhost dockerExamples]$ sudo  docker run -p 8080:8080 -t dockerexamples
+
+
+enpoint
+=======
 
