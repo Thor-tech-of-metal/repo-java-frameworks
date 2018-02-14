@@ -32,6 +32,8 @@ Notes : run and map internal port from 8080 to 8080
 *) [skynet@localhost dockerExamples]$ sudo  docker run -p 8080:8080 -t dockerexamples
 
 
-enpoint
+Enpoint
 =======
+http://localhost:8080/greeting
+
 
