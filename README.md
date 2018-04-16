@@ -1,6 +1,6 @@
 # repo-java-frameworks
 
-This repo contains 
+This repo contains: 
 
 This repo contains projects with examples of java frameworks.
 
