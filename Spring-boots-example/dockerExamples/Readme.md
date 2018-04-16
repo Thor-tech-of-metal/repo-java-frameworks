@@ -5,6 +5,19 @@ Package the application
 [skynet@localhost dockerExamples]$ ./mvnw package && java -jar target/gs-spring-boot-docker-0.1.0.jar
 
 
+Setup docker hipser
+===================
+1 Your PATH should include /usr/local/bin
+
+2 add your user to docker.
+[skynet@localhost dockerExamples] sudo usermod -a -G libvirt,docker <username>
+
+3 
+[skynet@localhost dockerExamples] id <username>
+
+4
+[skynet@localhost dockerExamples] systemctl start docker
+[skynet@localhost dockerExamples] systemctl enable docker
 
 Start docker hipser
 ===================
@@ -37,3 +50,8 @@ Enpoint
 http://localhost:8080/greeting
 
 
+https://docs.openshift.org/latest/minishift/openshift/openshift-docker-registry.html
+
+https://docs.openshift.org/latest/minishift/using/docker-daemon.html
+
+https://www.youtube.com/watch?v=r5VzXvvkiL4
