@@ -23,8 +23,8 @@
 .Spring-boots-example/dockerExamples/project
 .Spring-boots-example/dockerExamples/target
 
-.Spring-boots-example/minikube-spring-boots/project
-.Spring-boots-example/minikube-spring-boots/target
+.Spring-boots-example/minikube-spring-boots-example/project
+.Spring-boots-example/minikube-spring-boots-example/target
 
 
 
