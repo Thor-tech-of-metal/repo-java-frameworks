@@ -1,0 +1,13 @@
+
+in the minion-army.yml
+*) Note that the “SPRING_APPLICATION_NAME” variable is automatically matched to the spring.application.name property so that this minion service becomes a one-eyed-minion.
+
+*) There will be two instances (replicas) of this minikube-spring-boots type available and the Kubernetes service will automatically route requests to one or the other of them.
+
+*) The Service will be exposed to the world outside Kubernetes—with Minikube a request to port 30080 will go to the Service.
+
+*) This bit of the Service would be a little different for real Kubernetes as we’d use LoadBalancer rather than NodePort and wouldn’t be restricted to the minikube port range.)
+
+*) The Deployment for the minion type will create two Pods. Each will be a minion of that type.
+
+
