@@ -89,4 +89,6 @@ Rollback to revision 1.
 
 `kubectl rollout undo deployment <deployment_name> --to-revision=1` 
 
-
+### Problems starting minikube.
+delete  ~/.minikube/machines
+`cd rm -r ~/.minikube/machines`
