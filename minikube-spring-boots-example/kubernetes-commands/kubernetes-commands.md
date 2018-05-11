@@ -93,6 +93,12 @@ Rollback to revision 1.
 
 `kubectl rollout undo deployment <deployment_name> --to-revision=1` 
 
+### Hot to get the current service host and ports
+`export PORT=$(kubectl get --namespace crypt -o jsonpath="{.spec.ports[0].nodePort}" services crypt)
+export HOST=$(kubectl get nodes -o jsonpath="{.items[0].status.addresses[0].address}")
+export SERVICE_ADDR=https://$HOST:$PORT; echo $SERVICE_ADDR`
+
+
 ### Problems starting minikube.
 delete  ~/.minikube/machines
 `cd rm -r ~/.minikube/machines`
