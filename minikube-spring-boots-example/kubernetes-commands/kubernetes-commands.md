@@ -52,6 +52,10 @@ Stop minikube with `minikube stop`
 
 `kubectl get pods`
 
+### See all system deployed pods.
+
+`kubectl get po -n kube-system`
+
 ### Check the dashboard.
 
 `minikube dashboard`
