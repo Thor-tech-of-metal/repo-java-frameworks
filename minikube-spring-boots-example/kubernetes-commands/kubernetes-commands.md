@@ -102,3 +102,88 @@ export SERVICE_ADDR=https://$HOST:$PORT; echo $SERVICE_ADDR`
 ### Problems starting minikube.
 delete  ~/.minikube/machines
 `cd rm -r ~/.minikube/machines`
+
+
+# Commands
+
+`kubectl --context [THE-CONTEXT] [your command]`
+
+examples: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+
+curso: https://eu.udacity.com/course/scalable-microservices-with-kubernetes--ud615
+
+###commands
+
+
+all commands follow this order kubectl --context [CONTEXT] -n [NAME_SPACE] get deployments
+
+###Get pods services command
+
+*) get all deployments
+
+`kubectl --context [THE-CONTEXT] -n [THE-NAMESPACE] get deployments`
+
+*) get all pods deployments instaces.
+`kubectl --context [THE-CONTEXT] -n [THE-NAMESPACE] get pods`
+
+*) get all services running.
+`kubectl --context [THE-CONTEXT] -n [THE-NAMESPACE] get services`
+
+*) get all pods more information for a namespace.
+`kubectl --context [THE-CONTEXT] -n [THE-NAMESPACE] get pods -o wide`
+
+*) List all pods in the namespace, including uninitialized ones
+`kubectl --context [THE-CONTEXT] -n [THE-NAMESPACE] get pods --include-uninitialized`
+
+### Watch events
+
+*) get all pods more information for a namespace.
+`kubectl --context [THE-CONTEXT] -n [THE-NAMESPACE] get events --watch`
+
+
+### Describe pod commands
+
+
+*) 
+`kubectl --context [THE-CONTEXT] -n [THE-NAMESPACE] describe pods [POD-NAME]`
+
+
+### Logs command
+
+
+*) get all logs  for one pod instance
+`kubectl --context [THE-CONTEXT] -n [THE-NAMESPACE] logs [POD-NAME]`
+
+*) get all logs for one pod instance with tail.
+`kubectl --context [THE-CONTEXT] -n [THE-NAMESPACE] logs [POD-NAME] -f`
+
+### Bash command
+
+
+*) 
+`kubectl --context [THE-CONTEXT] -n [THE-NAMESPACE] exec -it [POD-NAME] bash`
+
+### Connect to mysql machine
+
+*) 
+`kubectl --context [THE-CONTEXT] -n [THE-NAMESPACE] exec -it [POD-NAME] bash`
+*) 
+`mysql -h mysql.cx.aurora.tescocloud.com -u [THE-NAMESPACE] -p`
+
+
+`kubectl --context <context-name> -n [THE-NAMESPACE] exec -it <pod-name> bash`
+
+### Ip commands
+
+
+*) Get ExternalIPs of all nodes
+`kubectl --context [THE-CONTEXT] -n [THE-NAMESPACE] get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="ExternalIP")].address}' `
+
+
+### Check which nodes are ready
+` $ JSONPATH='{range .items[*]}{@.metadata.name}:{range @.status.conditions[*]}{@.type}={@.status};{end}{end}' \
+ && kubectl get nodes -o jsonpath="$JSONPATH" | grep "Ready=True" `
+
+
+
+
